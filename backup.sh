@@ -19,6 +19,7 @@ check_config(){
 do_backup(){
 
     BACKUP_PATH="$LOCAL_BACKUP_DIR"
+    [ $VERBOSE -eq 1 ] && echo " Check if backup path exists, if not create '$BACKUP_PATH'"
     [[ ! -d "$BACKUP_PATH" ]] && mkdir -p "$BACKUP_PATH"
     echo "   Creating $BACKUP_PATH/daily-$TODAY.tar.gz"
     
@@ -26,7 +27,7 @@ do_backup(){
     FILE_PATH="${BACKUP_PATH}/"
     FILENAMEPATH="$FILE_PATH$FILE_NAME"
 
-    tar -czf $FILENAMEPATH $BACKUP_PATHS --files-from=$BACKUP_CONFFILE
+    tar -czf $FILENAMEPATH $BACKUP_PATHS #--files-from=$BACKUP_CONFFILE
 
     [ $FTP_ENABLE -eq 1 ] && ftp_backup $FILE_NAME
     
