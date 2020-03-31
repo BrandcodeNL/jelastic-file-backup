@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "starting backup"
-CONFIGFILE="settings.conf"
+CONFIGFILE="/home/backup/settings.conf"
 source $CONFIGFILE
 
 
