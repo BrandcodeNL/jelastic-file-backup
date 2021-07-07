@@ -5,9 +5,9 @@ source $CONFIGFILE
 TIME_FORMAT='%d%m%Y-%H%M'
 
 TODAY=$(date +"%Y-%m-%d")
-DAILY_DELETE_NAME="daily-"`date +"%Y-%m-%d" --date '2 days ago'`
-WEEKLY_DELETE_NAME="weekly-"`date +"%Y-%m-%d" --date '1 weeks ago'`
-MONTHLY_DELETE_NAME="monthly-"`date +"%Y-%m-%d" --date '1 months ago'`
+DAILY_DELETE_NAME="daily-"`date +"%Y-%m-%d" --date '7 days ago'`
+WEEKLY_DELETE_NAME="weekly-"`date +"%Y-%m-%d" --date '5 weeks ago'`
+MONTHLY_DELETE_NAME="monthly-"`date +"%Y-%m-%d" --date '12 months ago'`
 
 check_config(){
     [ ! -f $CONFIGFILE ] && close_on_error "Config file not found, make sure config file is correct"
